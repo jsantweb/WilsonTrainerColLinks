@@ -1,0 +1,168 @@
+:root {
+    --fuentebotones: 'CocogooseProTrial Light', sans-serif;;
+    --fuenteParrafos: 'Built Titling', sans-serif;
+    --letra: #47BDFB;
+    --primario: rgba(0, 15, 68, 0.9); /* Color más intenso con opacidad del 90% */
+    --secundario: rgba(58, 77, 180, 0.9); /* Color más tenue con opacidad del 90% */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../img/Img-fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Ajusta la duración y el tipo de transición según tus preferencias */
+}
+
+/* Aplica la transición cuando la página se carga */
+body.loaded .fade-in {
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    body.background-image {
+        background: url('../img/Img-fondo.jpg') no-repeat center center fixed;;
+    }
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at bottom right, /* Establece el centro del degradado en la esquina inferior derecha */
+        var(--secundario), /* Color más intenso */
+        var(--primario) /* Color más tenue */
+    );
+    z-index: -1; /* Asegura que el degradado esté detrás del contenido */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    
+}
+
+@media (max-width: 767px) {
+    .container {
+        margin: 20px; /* Ajustar el margen según sea necesario */
+    }
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 152px;
+    height: 150px;
+    
+}
+
+h1 {
+    color: var(--letra);
+    font-family: var(--fuenteParrafos);
+    font-size: 3.5rem;
+    margin: 10px 0;
+    font-weight:500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+@font-face {
+    font-family: 'CocogooseProTrial Light';
+    src: url('fonts/CocogooseProTrial-Light.woff2') format('woff2'),
+         url('fonts/CocogooseProTrial-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h2 {
+    margin-top: 0;
+    color:aliceblue;
+    font-family: var(--fuenteParrafos);
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.buttons {
+    margin: 20px 0;
+    font-family: 'CocogooseProTrial Light', sans-serif;
+    font-weight: normal;
+}
+
+.btn {
+    display: block;
+    padding: 12px;
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid white;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 20px;
+    position: relative; /* Asegura que el logo pueda posicionarse adecuadamente dentro del footer */
+    text-align: center;
+}
+
+.footer::before {
+    content: ''; /* Necesario para que se muestre el fondo */
+    display: block;
+    background-image: url('../img/Logo.png'); /* Ruta a tu imagen de logo */
+    background-size: contain; /* Ajusta la imagen para que se ajuste al contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del footer */
+    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    height: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+    height: 10vh;
+
+}
+
+.logoufirts img {
+    width: 80px; /* Tamaño reducido */
+    height: 80; /* Mantiene la proporción de la imagen */
+}
+
+.join-btn:hover {
+    background: #1c86ee;
+    transform: scale(1.05);
+}
+
+.footer p {
+    color: aliceblue;
+    font-family: var(--fuenteParrafos);
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+.sinfondo {
+    background-color: aliceblue;
+    background-image: none;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    animation: fadeInOut 3s ease-in-out infinite;
+}
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
