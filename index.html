@@ -170,19 +170,56 @@
             z-index: -1;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
+        /* Clase de animación activa para botones */
+        .btn-active {
             background: rgba(71, 189, 251, 0.3);
             border-color: var(--letra);
             box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--neon);
+            transform: translateY(-3px);
         }
 
-        .btn:hover::before {
-            left: 100%;
+        /* Estado hover para dispositivos no móviles */
+        @media (hover: hover) {
+            .btn:hover {
+                transform: translateY(-3px);
+                background: rgba(71, 189, 251, 0.3);
+                border-color: var(--letra);
+                box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--neon);
+            }
+
+            .btn:hover::before {
+                left: 100%;
+            }
         }
 
         .btn:active {
             transform: translateY(1px);
+        }
+
+        /* Animación de pulso para móviles */
+        @keyframes buttonPulse {
+            0% {
+                background: transparent;
+                box-shadow: none;
+                border-color: white;
+            }
+            50% {
+                background: rgba(71, 189, 251, 0.3);
+                border-color: var(--letra);
+                box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--neon);
+            }
+            100% {
+                background: transparent;
+                box-shadow: none;
+                border-color: white;
+            }
+        }
+
+        /* Aplicar la animación de pulso para dispositivos móviles */
+        @media (hover: none) {
+            .btn {
+                animation: fadeIn 1s ease-out forwards, buttonPulse 2s infinite 1s;
+            }
         }
 
         .footer {
@@ -274,11 +311,11 @@
             <h1>WILSON TRAINER</h1>
             <h2>¡ÚNETE A NUESTRO TEAM!</h2>
             <div class="buttons">
-                <a href="https://wa.link/ffdgdr" class="btn">Whatsapp para asesoría Online</a>
-                <a href="https://wa.link/rqfpwq" class="btn">Whatsapp para asesoría Presencial</a>
-                <a href="https://wa.link/lo3x33" class="btn">Entrenamiento personalizado Aplicación</a>
-                <a href="https://wa.link/n9q04z" class="btn">Inscripción reto gratuito 7 días</a>
-                <a href="website.html" class="btn">Sitio web</a>
+                <a href="https://wa.link/ffdgdr" class="btn" id="btn1">Whatsapp para asesoría Online</a>
+                <a href="https://wa.link/rqfpwq" class="btn" id="btn2">Whatsapp para asesoría Presencial</a>
+                <a href="https://wa.link/lo3x33" class="btn" id="btn3">Entrenamiento personalizado Aplicación</a>
+                <a href="https://wa.link/n9q04z" class="btn" id="btn4">Inscripción reto gratuito 7 días</a>
+                <a href="website.html" class="btn" id="btn5">Sitio web</a>
             </div>
             <div class="footer">
                 <div class="logoufirst"></div>
@@ -401,6 +438,33 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+        // Detectar si es un dispositivo táctil
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
+        };
+
+        // Añadir interacción especial para dispositivos táctiles
+        if (isTouchDevice()) {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', function(e) {
+                    // Añadir clase activa
+                    this.classList.add('btn-active');
+                    
+                    // Esperar un breve momento antes de seguir el enlace
+                    setTimeout(() => {
+                        window.location.href = this.getAttribute('href');
+                    }, 150);
+                    
+                    // Prevenir comportamiento por defecto para dar tiempo a la animación
+                    e.preventDefault();
+                });
+            });
+        }
     </script>
 </body>
 </html>

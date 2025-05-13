@@ -45,3 +45,415 @@
     </script>
 </body>
 </html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Trainer links</title>
+    <meta name="description" content="Enlaces entrenamiento">
+    
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.cdnfonts.com/css/built-titling" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --fuentebotones: 'CocogooseProTrial Light', sans-serif;
+            --fuenteParrafos: 'Built Titling', sans-serif;
+            --letra: #47BDFB;
+            --primario: rgba(0, 15, 68, 0.9);
+            --secundario: rgba(58, 77, 180, 0.9);
+            --neon: #47BDFB;
+            --neon-shadow: 0 0 10px #47BDFB, 0 0 20px #47BDFB;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('img/Img-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: var(--fuenteParrafos);
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at bottom right,
+                var(--secundario),
+                var(--primario)
+            );
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out, floatUp 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(50px); }
+            to { transform: translateY(0); }
+        }
+
+        .profile {
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 152px;
+            height: 150px;
+            
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(71, 189, 251, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(71, 189, 251, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(71, 189, 251, 0); }
+        }
+
+        h1 {
+            color: var(--letra);
+            font-family: var(--fuenteParrafos);
+            font-size: 3.5rem;
+            margin: 10px 0 0;
+            font-weight: 500;
+            text-shadow: var(--neon-shadow);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #47BDFB, 0 0 20px #47BDFB; }
+            50% { text-shadow: 0 0 15px #47BDFB, 0 0 30px #47BDFB; }
+        }
+
+        h2 {
+            margin-top: 5px;
+            color: aliceblue;
+            font-family: var(--fuenteParrafos);
+            font-size: 1.8rem;
+            font-weight: normal;
+            animation: slideInRight 0.7s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .buttons {
+            margin: 20px 0;
+            font-family: var(--fuentebotones);
+            font-weight: normal;
+        }
+
+        .btn {
+            display: block;
+            padding: 14px;
+            margin: 20px 0;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid white;
+            transition: all 0.4s ease;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: transparent;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .btn:nth-child(1) { animation-delay: 0.2s; }
+        .btn:nth-child(2) { animation-delay: 0.4s; }
+        .btn:nth-child(3) { animation-delay: 0.6s; }
+        .btn:nth-child(4) { animation-delay: 0.8s; }
+        .btn:nth-child(5) { animation-delay: 1s; }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: rgba(71, 189, 251, 0.3);
+            border-color: var(--letra);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--neon);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .footer::before {
+            content: '';
+            display: block;
+            background-image: url('img/Logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .footer p {
+            color: aliceblue;
+            font-family: var(--fuenteParrafos);
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 5px rgba(71, 189, 251, 0.7);
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--letra);
+            transform: scale(1.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Fade-in animation class */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        body.loaded .fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="overlay"></div>
+    <div class="fondo fade-in">
+        <div class="container">
+            <div class="profile">
+                <img src="img/Foto-will.png" alt="Wilson Trainer">
+            </div>
+            <h1>WILSON TRAINER</h1>
+            <h2>¡ÚNETE A NUESTRO TEAM!</h2>
+            <div class="buttons">
+                <a href="https://wa.link/ffdgdr" class="btn">Whatsapp para asesoría Online</a>
+                <a href="https://wa.link/rqfpwq" class="btn">Whatsapp para asesoría Presencial</a>
+                <a href="https://wa.link/lo3x33" class="btn">Entrenamiento personalizado Aplicación</a>
+                <a href="https://wa.link/n9q04z" class="btn">Inscripción reto gratuito 7 días</a>
+                <a href="website.html" class="btn">Sitio web</a>
+            </div>
+            <div class="footer">
+                <div class="logoufirst"></div>
+                <p>WGMYTEAM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Particles.js configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 300
+                        }
+                    },
+                    "color": {
+                        "value": "#47BDFB"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 1,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.8,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#47BDFB",
+                        "opacity": 1,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        // Fade-in effect on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
