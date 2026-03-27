@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wilson Trainer links</title>
     <meta name="description" content="Enlaces entrenamiento">
-    
+
     <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.cdnfonts.com/css/built-titling" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <style>
         :root {
@@ -49,11 +53,9 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: radial-gradient(
-                circle at bottom right,
-                var(--secundario),
-                var(--primario)
-            );
+            background: radial-gradient(circle at bottom right,
+                    var(--secundario),
+                    var(--primario));
             z-index: -1;
         }
 
@@ -69,13 +71,23 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes floatUp {
-            from { transform: translateY(50px); }
-            to { transform: translateY(0); }
+            from {
+                transform: translateY(50px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
         }
 
         .profile {
@@ -88,13 +100,21 @@
             border-radius: 50%;
             width: 152px;
             height: 150px;
-            
+
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(71, 189, 251, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(71, 189, 251, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(71, 189, 251, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(71, 189, 251, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(71, 189, 251, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(71, 189, 251, 0);
+            }
         }
 
         h1 {
@@ -108,8 +128,15 @@
         }
 
         @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px #47BDFB, 0 0 20px #47BDFB; }
-            50% { text-shadow: 0 0 15px #47BDFB, 0 0 30px #47BDFB; }
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px #47BDFB, 0 0 20px #47BDFB;
+            }
+
+            50% {
+                text-shadow: 0 0 15px #47BDFB, 0 0 30px #47BDFB;
+            }
         }
 
         h2 {
@@ -122,8 +149,15 @@
         }
 
         @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .buttons {
@@ -152,11 +186,25 @@
             opacity: 0;
         }
 
-        .btn:nth-child(1) { animation-delay: 0.2s; }
-        .btn:nth-child(2) { animation-delay: 0.4s; }
-        .btn:nth-child(3) { animation-delay: 0.6s; }
-        .btn:nth-child(4) { animation-delay: 0.8s; }
-        .btn:nth-child(5) { animation-delay: 1s; }
+        .btn:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .btn:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .btn:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .btn:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .btn:nth-child(5) {
+            animation-delay: 1s;
+        }
 
         .btn::before {
             content: '';
@@ -203,11 +251,13 @@
                 box-shadow: none;
                 border-color: white;
             }
+
             50% {
                 background: rgba(71, 189, 251, 0.3);
                 border-color: var(--letra);
                 box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--neon);
             }
+
             100% {
                 background: transparent;
                 box-shadow: none;
@@ -237,12 +287,18 @@
             background-position: center;
             width: 100px;
             height: 100px;
-            margin: 0 auto;;
+            margin: 0 auto;
+            ;
         }
 
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .footer p {
@@ -299,6 +355,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="particles-js"></div>
     <div class="overlay"></div>
@@ -313,7 +370,7 @@
                 <a href="https://wa.link/k1y8el" class="btn" id="btn1">Whatsapp para asesoría Online</a>
                 <a href="https://wa.link/zrba1f" class="btn" id="btn2">Whatsapp para asesoría Presencial</a>
                 <a href="https://wa.link/4ag59s" class="btn" id="btn3">Entrenamiento personalizado Aplicación</a>
-                <a href="https://wa.link/v0v6o0" class="btn" id="btn4">Inscripciones RETO 90 Febrero</a>
+                <a href="https://wa.link/drdqgk" class="btn" id="btn4">Inscripciones RETO 45 Abril</a>
                 <!-- <a href="website.html" class="btn" id="btn5">Sitio web</a> -->
             </div>
             <div class="footer">
@@ -325,7 +382,7 @@
 
     <script>
         // Particles.js configuration
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             particlesJS('particles-js', {
                 "particles": {
                     "number": {
@@ -448,17 +505,17 @@
         // Añadir interacción especial para dispositivos táctiles
         if (isTouchDevice()) {
             const buttons = document.querySelectorAll('.btn');
-            
+
             buttons.forEach(btn => {
-                btn.addEventListener('touchstart', function(e) {
+                btn.addEventListener('touchstart', function (e) {
                     // Añadir clase activa
                     this.classList.add('btn-active');
-                    
+
                     // Esperar un breve momento antes de seguir el enlace
                     setTimeout(() => {
                         window.location.href = this.getAttribute('href');
                     }, 150);
-                    
+
                     // Prevenir comportamiento por defecto para dar tiempo a la animación
                     e.preventDefault();
                 });
@@ -466,4 +523,5 @@
         }
     </script>
 </body>
+
 </html>
